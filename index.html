@@ -17,32 +17,29 @@
     <div class="layui-layout layui-layout-admin">
         <div class="layui-header">
             <div class="layui-logo">
-                <img src="/assets/images/logo.png" alt="" />
+                <img src="/assets/images/logo.png" alt="" style="height: 47px;" />
             </div>
-            <!-- 头部区域（可配合layui已有的水平导航） -->
             <ul class="layui-nav layui-layout-right">
                 <li class="layui-nav-item">
-                    <a href="javascript:;" class="userinfo">
-                        <img src="http://t.cn/RCzsdCq" class="layui-nav-img" />
-                        <span class="text-avatar">A</span> 个人中心
+                    <a class="userinfo">
+                        <img src="/assets/images/defaultHhoto.jpg" class="layui-nav-img" />个人中心
                     </a>
                     <dl class="layui-nav-child">
-                        <dd><a href="">基本资料</a></dd>
-                        <dd><a href="">更换头像</a></dd>
-                        <dd><a href="">重置密码</a></dd>
+                        <dd><a>基本资料</a></dd>
+                        <dd><a>更换头像</a></dd>
+                        <dd><a>重置密码</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
-                    <a href=""><span class="iconfont icon-tuichu"></span>退出</a>
+                    <a id="btnLogout"><span class="iconfont icon-tuichu"></span>退出</a>
                 </li>
             </ul>
         </div>
         <div class="layui-side layui-bg-black">
             <div class="layui-side-scroll">
                 <div class="userinfo">
-                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img" />
-                    <span class="text-avatar">A</span>
-                    <span id="welcome">欢迎 ***</span>
+                    <img src="/assets/images/defaultHhoto.jpg" class="layui-nav-img" />
+                    <span id="welcome">欢迎 刘亦菲</span>
                 </div>
                 <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
                 <ul class="layui-nav layui-nav-tree" lay-shrink="all">
@@ -50,7 +47,7 @@
                         <a href="/home/dashboard.html" target="fm"><span class="iconfont icon-home"></span>首页</a>
                     </li>
                     <li class="layui-nav-item">
-                        <a class="" href="javascript:;"><span class="iconfont icon-16"></span>文章管理</a>
+                        <a href="javascript:;"><span class="iconfont icon-16"></span>文章管理</a>
                         <dl class="layui-nav-child">
                             <dd>
                                 <a href="javascript:;"><i class="layui-icon layui-icon-app"></i>文章类别</a>
@@ -86,11 +83,17 @@
         </div>
         <div class="layui-footer">
             <!-- 底部固定区域 -->
-            © www.itheima.com - 黑马程序员
+            © lj19102837815@163.com - 程序员：李杰
         </div>
     </div>
-    <!-- 导入 layui 的JS文件 -->
+    <!-- 导入 layui 的 JS 文件 -->
     <script src="/assets/lib/layui/layui.all.js"></script>
+    <!-- 导入 jQuery 文件 -->
+    <script src="/assets/lib/jquery.js"></script>
+    <!-- 导入自己封装的 baseAPI 文件 -->
+    <script src="/assets/js/baseAPI.js"></script>
+    <!-- 导入自己的 JS 文件 -->
+    <script src="/assets/js/index.js"></script>
 </body>
 
 </html>
