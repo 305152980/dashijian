@@ -4,15 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- 导入 layui 的样式表 -->
     <link rel="stylesheet" href="/assets/lib/layui/css/layui.css" />
+    <!-- 导入自己的样式表 -->
     <link rel="stylesheet" href="/assets/css/article/art_list.css" />
   </head>
   <body>
-    <!-- 卡片区域 -->
     <div class="layui-card">
       <div class="layui-card-header">文章列表</div>
       <div class="layui-card-body">
-        <!-- 筛选区域 -->
+        <!-- 条件查询区域 -->
         <form class="layui-form" id="form-search">
           <div class="layui-form-item layui-inline">
             <select name="cate_id"></select>
@@ -25,7 +26,9 @@
             </select>
           </div>
           <div class="layui-form-item layui-inline">
-            <button class="layui-btn" lay-submit lay-filter="formDemo">筛选</button>
+            <button class="layui-btn" lay-submit lay-filter="formDemo">
+              查询
+            </button>
           </div>
         </form>
         <!-- 列表区域 -->
@@ -52,8 +55,14 @@
         <div id="pageBox"></div>
       </div>
     </div>
-
-    <!-- 列表数据的模板引擎 -->
+    <!-- 分类可选项的模板结构 -->
+    <script type="text/html" id="tpl-cate">
+      <option value="">所有分类</option>
+      {{each data}}
+      <option value="{{$value.Id}}">{{$value.name}}</option>
+      {{/each}}
+    </script>
+    <!-- 列表数据的模板结构 -->
     <script type="text/html" id="tpl-table">
       {{each data}}
       <tr>
@@ -63,26 +72,26 @@
         <td>{{$value.state}}</td>
         <td>
           <button type="button" class="layui-btn layui-btn-xs">编辑</button>
-          <button type="button" class="layui-btn layui-btn-danger layui-btn-xs btn-delete" data-id="{{$value.Id}}">删除</button>
+          <button
+            type="button"
+            class="layui-btn layui-btn-danger layui-btn-xs btn-delete"
+            data-id="{{$value.Id}}"
+          >
+            删除
+          </button>
         </td>
       </tr>
       {{/each}}
     </script>
-
-    <!-- 分类可选项的模板结构 -->
-    <script type="text/html" id="tpl-cate">
-      <option value="">所有分类</option>
-      {{each data}}
-      <option value="{{$value.Id}}">{{$value.name}}</option>
-      {{/each}}
-    </script>
-
-    <!-- 导入第三方的 JS 插件 -->
+    <!-- 导入 layui 的 JS 文件 -->
     <script src="/assets/lib/layui/layui.all.js"></script>
+    <!-- 导入 JQuery 文件 -->
     <script src="/assets/lib/jquery.js"></script>
-    <script src="/assets/js/baseAPI.js"></script>
+    <!-- 导入 art-template 文件 -->
     <script src="/assets/lib/template-web.js"></script>
-    <!-- 导入自己的 JS 脚本 -->
+    <!-- 导入自己封装的 baseAPI.js 文件 -->
+    <script src="/assets/js/baseAPI.js"></script>
+    <!-- 导入自己的 JS 文件 -->
     <script src="/assets/js/article/art_list.js"></script>
   </body>
 </html>
